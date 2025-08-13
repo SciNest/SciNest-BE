@@ -45,6 +45,7 @@ public class ReagentController {
   @DeleteMapping(value = "/delete/{id}")
   @Operation(summary = "시약 삭제 API")
   public ApiResponse<Void> deleteReagent(@PathVariable("id") Long reagentId) {
+    this.reagentService.deleteReagent(reagentId);
     return ApiResponse.onSuccess();
   }
 }

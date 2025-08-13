@@ -50,6 +50,6 @@ public class ReagentService {
   }
 
   public void deleteReagent(long reagentId) {
-
+    this.jpaReagentRepository.deleteById(reagentId);
   }
 }
