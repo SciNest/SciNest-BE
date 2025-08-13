@@ -1,10 +1,14 @@
 package com.scinest.domain.member;
 
+import com.scinest.domain.reagent.Reagent;
 import com.scinest.global.domain.BaseTimeEntity;
 import com.scinest.global.utils.enums.Role;
 import jakarta.persistence.*;
 import lombok.*;
 import org.hibernate.annotations.Comment;
+
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Getter
@@ -44,4 +48,8 @@ public class Member extends BaseTimeEntity {
   @Comment(value = "권한")
   @Column(name = "role", nullable = false)
   private Role role;
+
+  @Builder.Default
+  @OneToMany(mappedBy = "member", cascade = CascadeType.ALL)
+  private List<Reagent> reagentList = new ArrayList<>();
 }
