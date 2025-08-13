@@ -15,7 +15,7 @@ import lombok.*;
 public class ListReagentDto {
 
   @Schema(description = "시약 ID")
-  private String reagentId;
+  private Long reagentId;
 
   @Schema(description = "시약명")
   private String reagentName;

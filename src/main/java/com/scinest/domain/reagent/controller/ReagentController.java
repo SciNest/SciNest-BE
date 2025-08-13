@@ -2,6 +2,8 @@ package com.scinest.domain.reagent.controller;
 
 import com.scinest.domain.reagent.controller.request.CreateReagentRequest;
 import com.scinest.domain.reagent.controller.request.UpdateReagentRequest;
+import com.scinest.domain.reagent.controller.response.DetailReagentResponse;
+import com.scinest.domain.reagent.controller.response.ListReagentResponse;
 import com.scinest.domain.reagent.service.ReagentService;
 import com.scinest.global.api_response.ApiResponse;
 import io.swagger.v3.oas.annotations.Operation;
@@ -25,14 +27,14 @@ public class ReagentController {
 
   @GetMapping(value = "/detail/{id}")
   @Operation(summary = "시약 조회 API")
-  public ApiResponse<Void> detailReagent(@PathVariable("id") Long reagentId) {
-    return ApiResponse.onSuccess();
+  public ApiResponse<DetailReagentResponse> detailReagent(@PathVariable("id") Long reagentId) {
+    return ApiResponse.onSuccess(this.reagentService.detailReagent(reagentId));
   }
 
   @GetMapping(value = "/list")
   @Operation(summary = "시약 목록 조회 API")
-  public ApiResponse<Void> reagentList() {
-    return ApiResponse.onSuccess();
+  public ApiResponse<ListReagentResponse> reagentList() {
+    return ApiResponse.onSuccess(this.reagentService.reagentList());
   }
 
   @PatchMapping(value = "/update")
