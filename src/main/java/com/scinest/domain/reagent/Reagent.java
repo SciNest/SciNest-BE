@@ -1,6 +1,5 @@
 package com.scinest.domain.reagent;
 
-import com.scinest.domain.member.Member;
 import com.scinest.domain.reagent.enums.Classification;
 import com.scinest.domain.reagent.enums.ReagentCabinet;
 import com.scinest.domain.reagent.enums.Status;
@@ -74,8 +73,4 @@ public class Reagent extends BaseTimeEntity {
   @Comment(value = "비고")
   @Column(name = "note", nullable = false)
   private String note;
-
-  @ManyToOne(fetch = FetchType.LAZY)
-  @JoinColumn(name = "member_id")
-  private Member member;
 }
