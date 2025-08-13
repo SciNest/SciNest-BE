@@ -5,6 +5,7 @@ import com.scinest.domain.test.controller.response.DetailTestResponse;
 import com.scinest.domain.test.controller.response.ListTestResponse;
 import com.scinest.domain.test.service.TestService;
 import com.scinest.global.api_response.ApiResponse;
+import io.swagger.v3.oas.annotations.Hidden;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;
@@ -16,7 +17,7 @@ import org.springframework.web.bind.annotation.*;
  * ex) @RequestMapping("/member"), @Tag(name = "Member", description = "회원 관련 API")
  */
 
-//@Hidden
+@Hidden
 @RestController
 @RequestMapping("/test")
 @RequiredArgsConstructor
