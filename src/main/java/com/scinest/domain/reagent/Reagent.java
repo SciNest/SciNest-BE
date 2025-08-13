@@ -1,6 +1,6 @@
 package com.scinest.domain.reagent;
 
-import com.scinest.domain.member.Member;
+import com.scinest.domain.reagent.controller.request.UpdateReagentRequest;
 import com.scinest.domain.reagent.enums.Classification;
 import com.scinest.domain.reagent.enums.ReagentCabinet;
 import com.scinest.domain.reagent.enums.Status;
@@ -75,7 +75,18 @@ public class Reagent extends BaseTimeEntity {
   @Column(name = "note", nullable = false)
   private String note;
 
-  @ManyToOne(fetch = FetchType.LAZY)
-  @JoinColumn(name = "member_id")
-  private Member member;
+  public void update(UpdateReagentRequest request) {
+    this.reagentName = request.reagentName();
+    this.englishName = request.englishName();
+    this.chemicalFormula = request.chemicalFormula();
+    this.classification = request.classification();
+    this.status = request.status();
+    this.reagentCabinet = request.reagentCabinet();
+    this.quantity = request.quantity();
+    this.density = request.density();
+    this.deoksan = request.deoksan();
+    this.msds = request.msds();
+    this.isManagementRecord = request.isManagementRecord();
+    this.note = request.note();
+  }
 }
