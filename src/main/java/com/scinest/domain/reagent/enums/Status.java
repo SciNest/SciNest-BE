@@ -7,10 +7,10 @@ import lombok.Getter;
 @AllArgsConstructor
 public enum Status {
 
-  SOLID("s"),
-  AQUEOUS("aq"),
-  LIQUID("l"),
-  GAS("g");
+  SOLID("고체(s)"),
+  AQUEOUS("수용액(aq)"),
+  LIQUID("액체(l)"),
+  GAS("기체(g)");
 
   private final String value;
 }
