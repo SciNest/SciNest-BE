@@ -19,6 +19,7 @@ public class ReagentController {
   @PostMapping(value = "/create")
   @Operation(summary = "시약 생성 API")
   public ApiResponse<Void> createReagent(final @RequestBody CreateReagentRequest request) {
+    this.reagentService.createReagent(request);
     return ApiResponse.onSuccess();
   }
 
@@ -36,7 +37,8 @@ public class ReagentController {
 
   @PatchMapping(value = "/update")
   @Operation(summary = "시약 수정 API")
-  public ApiResponse<Void> updateReagent(@RequestBody UpdateReagentRequest request) {
+  public ApiResponse<Void> updateReagent(final @RequestBody UpdateReagentRequest request) {
+    this.reagentService.updateReagent(request);
     return ApiResponse.onSuccess();
   }
 
